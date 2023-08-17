@@ -3,25 +3,24 @@ import axios from "axios";
 import "./Weather.css";
 
 
-export default function Weather() {
-  const [ready , setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ready:false});
     function handleResponse (response) {
-
-  console.log(response.data);
    setWeatherData({
+    ready: true,
      temperature: response.data.main.temp,
      humidity: response.data.main.humidity,
+     date: "Thursday 15:43",
       description: response.data.weather[0].description,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
       wind: response.data.wind.speed,
       city: response.data.name 
   });
-  setReady(true);
+
     }
 
 
-if (ready) {
+if (weatherData.ready) {
  return (
         <div className="Weather">
              <form>
@@ -47,13 +46,13 @@ if (ready) {
 
          <h1>{weatherData.city}</h1>      
    <ul>
-    <li>Tuesday 14:00</li>
-    <li>{weatherData.description}</li>
+    <li>{weatherData.date}</li>
+    <li className="text-capitalize">{weatherData.description}</li>
  </ul>  
   <div className="row mt-3">
     <div className="col-6">
       <div className="clearfix">
-        <img src= {weatherData.iconUrl} 
+        <img src= {weatherData.iconUrl} alt={weatherData.description}
            className="float-left"
         />
 <div className="float-left">
@@ -75,8 +74,7 @@ if (ready) {
 } else {
 
 const apiKey = "1e6f081375a3810cea4761b8aae319a8";
-let city="Lagos";
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
 
 return "Loading..."

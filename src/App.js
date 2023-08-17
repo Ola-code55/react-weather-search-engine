@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-    <Weather/>
+    <Weather defaultCity="Lagos"/>
       <footer>
         This project was coded by Olakusibe Animashaun and it is {""}
         <a href="https://github.com/Ola-code55/react-weather-search-engine" target="_blank" rel="noreferrer">

@@ -3,7 +3,6 @@ font-family: Arial, sans-serif;
 border: 1px solid#dad3d3;
 color: rgb(135, 135, 135);
 padding: 16px;
-
 border-radius: 4px;
 }
 
@@ -58,6 +57,7 @@ display: inline-block;
     position: relative;
     line-height: 1;
     top: -34px;
-  
 }
+
+
 
