@@ -8,7 +8,7 @@ export default function App() {
     <Weather/>
       <footer>
         This project was coded by Olakusibe Animashaun and it is {""}
-        <a href="https://github.com/Ola-code55/react-weather-search-engine" target="_blank">
+        <a href="https://github.com/Ola-code55/react-weather-search-engine" target="_blank" rel="noreferrer">
           open-sourced on GitHub
         </a>
       </footer>
