@@ -28,11 +28,8 @@ margin-bottom: 20px;
     line-height: 19px;
     list-style: none;
 }
-.Weather img {
-height: 64px;
-width: 64px;
-margin-right: 10px;
-display: inline-block;
+.Weather canvas {
+margin-right: 5px;
 }
 .Weather .temperature {
     font-weight: bold;
